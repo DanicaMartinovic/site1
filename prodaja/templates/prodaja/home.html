@@ -1,0 +1,53 @@
+{% load static %}
+{% block body %}
+
+<div class="box">
+<h2>Dobro došli</h2>
+<p>BM je porodična firma. 
+    <br> Višegodišnje iskustvo u prodaji voća i povrća</p>
+
+</div>
+
+<fieldset >
+ <legend>VOĆE</legend>
+    <div class="photo">
+        <img src="{% static 'image/limun.jpg' %}" alt="">
+    </div>
+    <div class="photo">
+        <img src="{% static 'image/narandza.jpg' %}" alt="">
+    </div>
+    <div class="photo">
+        <img src="{% static 'image/kivi.jpg' %}" alt="">
+    </div>
+    <div class="photo">
+        <img src="{% static 'image/jabuke.jpg' %}" alt="">
+    </div>
+    <div class="photo">
+        <img src="{% static 'image/jagode.jpg' %}" alt="">
+    </div>
+
+</fieldset>
+
+
+<fieldset >
+    
+    <legend class="id">POVRĆE</legend>
+       <div class="photo">
+           <img src="{% static 'image/sargarepa.jpg' %}" alt="">
+       </div>
+       <div class="photo">
+           <img src="{% static 'image/luk.jpg' %}" alt="">
+       </div>
+       <div class="photo">
+           <img src="{% static 'image/paradajz.jpg' %}" alt="">
+       </div>
+       <div class="photo">
+           <img src="{% static 'image/paprika.jpg' %}" alt="">
+       </div>
+       <div class="photo">
+           <img src="{% static 'image/krastavac.jpg' %}" alt="">
+       </div>
+   
+   </fieldset>
+
+{% endblock body %}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="pre-header">
+   <form action="/search">
+    <ul>
+        <li><i class="fa fa-shopping-cart"></i> Shop</li>
+        <li>
+        <input id="tags" name="q" type="text"  placeholder="Search..">
+        
+        <button><i class="fa fa-search"></i></button></li>
+       
+        </ul>
+        
+    </form>
+</div>
+<header>
+
+
+    <nav class="navbar" id="myTopnav">
+
+        <ul >
+          
+          
+            <li><a class = "{% if request.resolver_match.view_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Početna</a></li>
+            <li><a class="{% if request.resolver_match.view_name == 'shop' %}active{% endif %}" href="{% url 'shop' %}">Prodaja</a></li>
+            <li><a href="#"><img src="{% static 'image/prodaja_logo1.png' %}" alt="Logo"></a> </li>
+            <li><a class="{% if request.resolver_match.view_name == 'o_nama' %}active{% endif %}" href="{% url 'o_nama' %}">O nama</a></li>
+            <li><a class= "{% if request.resolver_match.view_name == 'kontakt' %}active{% endif %}" href="{% url 'kontakt' %}">Kontakt</a></li>
+        </ul>
+        
+
+
+
+ </nav>
+
+ 
+
+
+</header>
+<div class="slider">
+    <img class="mySlides" src="{% static 'image/voce_i_povrce_1.jpg' %}" alt="" >
+    <img class="mySlides" src="{% static 'image/voce_i_povrce_2.jpg' %}" alt="" >
+    <img class="mySlides" src="{% static 'image/vegan1.webp' %}" alt="" >
+    
+  
+
+ </div>

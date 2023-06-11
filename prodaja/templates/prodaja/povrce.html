@@ -1,0 +1,55 @@
+{% extends 'prodaja/index.html' %}
+{% load static %}
+
+{% block body %}
+<div class="shop-section">
+<h2><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+
+    Naši proizvodi
+    <span class="fa fa-star unchecked"></span><span class="fa fa-star unchecked"></span><span class="fa fa-star unchecked"></span>
+</h2> 
+
+
+
+<a href="{% url 'shop' %}" ><button class="{% if request.resolver_match.view_name == 'shop' %}active{% endif %}">Svi proizvodi</button></a>
+<a href="{% url 'voce' %}" ><button class="{% if request.resolver_match.view_name == 'voce' %}active{% endif %}">Voće</button></a>
+<a href="{% url 'povrce' %}"><button class="{% if request.resolver_match.view_name == 'povrce' %}active{% endif %}">Povrće</button></a>
+
+
+</div>
+
+<div class="shop-section-all">
+{% for proizvod in proizvodi  %}
+
+
+    <div class="photo1">
+       
+        {% if proizvod.id == 5 %}
+            <img src="{% static 'image/krastavac.jpg' %}" alt="">    
+            <div class="desc">{{proizvod.naziv}}</div>
+          
+        {% elif proizvod.id == 6 %}
+            <img src="{% static 'image/luk.jpg' %}" alt="">    
+            <div class="desc">{{proizvod.naziv}}</div>
+        
+        {% elif proizvod.id == 7 %}
+            <img src="{% static 'image/paprika.jpg' %}" alt="">          
+            <div class="desc">{{proizvod.naziv}}</div>
+
+        {% elif proizvod.id == 8 %}
+            <img src="{% static 'image/paradajz.jpg' %}" alt="">         
+            <div class="desc">{{proizvod.naziv}}</div>
+
+        {% elif proizvod.id == 9 %}
+            <img src="{% static 'image/sargarepa.jpg' %}" alt="">            
+            <div class="desc">{{proizvod.naziv}}</div>
+
+        {% endif %}
+        
+        </div>
+            
+    
+
+{% endfor %} 
+</div>   
+{% endblock body %}

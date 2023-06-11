@@ -1,0 +1,33 @@
+{% extends 'prodaja/index.html' %}
+{% load static %}
+
+{% block body %}
+<div class="shop-section">
+<h2><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+
+    Naši proizvodi
+    <span class="fa fa-star unchecked"></span><span class="fa fa-star unchecked"></span><span class="fa fa-star unchecked"></span>
+</h2> 
+
+
+
+<a href="{% url 'shop' %}"><button class="{% if request.resolver_match.view_name == 'shop' %}active{% endif %}">Svi proizvodi</button></a>
+<a href="{% url 'voce' %}"><button class="{% if request.resolver_match.view_name == 'voce' %}active{% endif %}">Voće</button></a>
+<a href="{% url 'povrce' %}"><button class="{% if request.resolver_match.view_name == 'povrce' %}active{% endif %}">Povrće</button></a>
+
+</div>
+<div class="shop-section-all">
+{% for filename, proizvod in list %}
+
+  
+    <div class="photo1">
+      
+        <img src="{% static folder_path %}{{ filename }}"   alt="Image"  >
+        <div class="desc">{{proizvod.naziv}}</div>
+    </div>
+ 
+
+{% endfor %} 
+
+</div>
+{% endblock body %}
